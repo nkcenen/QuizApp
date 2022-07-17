@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.quizapp.utils.ToastClass
+import com.example.quizapp.utils.ToastClass.showToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkAnswersAndSubmit() {
         if (validateEditTexts() && checkIfFirstAnswersCorrect() && checkIfSecondAnswersCorrect()) {
-            showToast("Brilliant! Click next to continue")
+            showToast(this,"Brilliant! Click next to continue")
         }
     }
 
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             else -> {
-                showToast("First Answer is incorrect")
+                showToast(this,"First Answer is incorrect")
                 false
             }
         }
@@ -54,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             else -> {
-                showToast("Second Answer is incorrect")
+                showToast(this,"Second Answer is incorrect")
                 false
             }
         }
@@ -63,17 +65,14 @@ class MainActivity : AppCompatActivity() {
     private fun validateEditTexts(): Boolean {
 
         if (firstQuestionEt?.text!!.isEmpty()) {
-            showToast("No Answer provided for the First Question")
+            showToast(this,"No Answer provided for the First Question")
             return false
         }
         if (secondQuestionEt?.text!!.isEmpty()) {
-            showToast("No Answer provided for the Second Question")
+            showToast(this,"No Answer provided for the Second Question")
             return false
         }
         return true
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
 }
