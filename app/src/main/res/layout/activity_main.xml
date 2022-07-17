@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/what_is_the_first_name_of_the_american_president"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+   <EditText
+       android:id="@+id/first_question_et"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="@string/enter_your_answer_here"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/when_did_nigeria_gain_their_independence_from_britain"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"/>
+
+   <EditText
+       android:id="@+id/second_question_et"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="@string/enter_your_answer_here"/>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="@string/submit"/>
+
+</LinearLayout>

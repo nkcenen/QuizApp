@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="enter_your_answer_here">Enter your answer here</string>
+    <string name="what_is_the_first_name_of_the_american_president">What is the first name of the American President</string>
+    <string name="when_did_nigeria_gain_their_independence_from_britain">When did Nigeria gain their independence from Britain</string>
+    <string name="submit">Submit</string>
+</resources>
