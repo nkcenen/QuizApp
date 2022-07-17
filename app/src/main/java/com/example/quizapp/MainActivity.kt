@@ -2,24 +2,33 @@ package com.example.quizapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    val firstQuestionAnswer = "Joe"
-    val secondQuestionAnswer = "1960"
+
+    private val firstQuestionAnswer = "Joe"
+    private val secondQuestionAnswer = "1960"
+
     private var firstQuestionEt: EditText? = null
     private var secondQuestionEt: EditText? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         firstQuestionEt = findViewById(R.id.first_question_et)
         secondQuestionEt = findViewById(R.id.second_question_et)
-        checkAnswersAndSubmit()
+
+        val submitButton = findViewById<Button>(R.id.submit_button)
+
+        submitButton.setOnClickListener {
+            checkAnswersAndSubmit()
+        }
     }
 
-    fun checkAnswersAndSubmit() {
+    private fun checkAnswersAndSubmit() {
         if (validateEditTexts() && checkIfFirstAnswersCorrect() && checkIfSecondAnswersCorrect()) {
             showToast("Brilliant! Click next to continue")
         }
@@ -27,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkIfFirstAnswersCorrect(): Boolean {
         return when {
-            firstQuestionEt!!.text.contains(firstQuestionAnswer) -> {
+            firstQuestionEt!!.text.toString().equals(firstQuestionAnswer, ignoreCase = true)-> {
                 true
             }
 
@@ -40,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkIfSecondAnswersCorrect(): Boolean {
         return when {
-            secondQuestionEt!!.text.contains(secondQuestionAnswer) -> {
+            secondQuestionEt!!.text.toString().equals(secondQuestionAnswer, ignoreCase = true) -> {
                 true
             }
 
